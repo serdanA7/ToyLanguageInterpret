@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.executewindow.ExecuteStatementController">
+   <children>
+      <VBox spacing="10.0" alignment="TOP_CENTER">
+         <HBox spacing="10.0" style="-fx-background-color: #f0f0f0;">
+            <!-- Column 1 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <TextField fx:id="numberProgramStatesTextField" prefHeight="26.0" prefWidth="158.0" promptText="Number of program states">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+               </TextField>
+            </VBox>
+
+            <!-- Column 2 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <Label fx:id="heapLabel" text="Heap Table">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <TableView fx:id="heapTableView" prefHeight="162.0" prefWidth="206.0">
+                  <columns>
+                     <TableColumn fx:id="addressColumn" prefWidth="108.0" text="Address" />
+                     <TableColumn fx:id="valueColumn" prefWidth="97.6" text="Value" />
+                  </columns>
+               </TableView>
+            </VBox>
+
+            <!-- Column 3 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <Label fx:id="outputLabel" text="Output">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="outputListView" prefHeight="162.0" prefWidth="200.0" />
+            </VBox>
+
+            <!-- Column 4 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <Label fx:id="fileTableLabel" text="File Table">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="fileTableListView" prefHeight="162.0" prefWidth="182.0" />
+            </VBox>
+
+            <!-- Column 5 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <Label text="Identifiers">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="identifiersListView" prefHeight="170.0" prefWidth="200.0" onMouseClicked="#changeProgramState" />
+            </VBox>
+
+            <!-- Column 6 -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <Label fx:id="symTableLabel" text="Symbol Table">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <TableView fx:id="SymTableView" prefHeight="170.0" prefWidth="206.0">
+                  <columns>
+                     <TableColumn fx:id="variableNameColumn" prefWidth="100.8" text="Variable Name" />
+                     <TableColumn fx:id="valueColumnSymTable" prefWidth="98.4" text="Value" />
+                  </columns>
+               </TableView>
+               <Label fx:id="executionStackLabel" text="Execution Stack">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <ListView fx:id="executionStackListView" prefHeight="170.0" prefWidth="190.0" />
+               <Label text="Logs">
+                  <font>
+                     <Font name="Arial Italic" size="18.0" />
+                  </font>
+               </Label>
+               <TextArea fx:id="logsTextArea" prefHeight="100.0" prefWidth="600.0" />
+            </VBox>
+         </HBox>
+         <Button mnemonicParsing="false" text="Run One Step" onAction="#handleRunOneStep">
+            <font>
+               <Font name="Arial Bold Italic" size="14.0" />
+            </font>
+         </Button>
+      </VBox>
+   </children>
+</AnchorPane>
